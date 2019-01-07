@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script> //mio script che utilizza jquery
+			$(document).ready(function(){
+				$(".c1").click(function(){
+					$(this).css("color", "blue");
+				});
+				$(".c1").dblclick(function(){
+					$(this).hide();
+				});
+				$("span.c2").click(function(){
+					$(".c1").hide();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>Il click di ogni elemento di classe 'c1' fa diventare l'elemento di colore blu;</li>
+			<li>il doppio click di ogni elemento di classe 'c1' fa sparire l'elemento;</li>
+			<li>il click su qualsiasi elemento 'span' di classe 'c2' fa sparire tutti gli elementi di classe 'c1'.</li>
+		</ul>
+		<div>Div 1</div>
+		<div>Div 2</div>
+		<div>Div 3</div>
+		<span class="c1">Primo span classe 1</span><br>
+		<span class="c2">Primo span classe 2</span><br>
+		<span class="c1">Secondo span classe 1</span><br>
+		<span class="c2">Secondo span classe 2</span><br>
+		<span class="c1">Terzo span classe 1</span><br>
+		<span class="c2">Terzo span classe 2</span>
+		<div class="c1">Questo e' un div di classe 1</div>
+		<div class="c2">Questo e' un div di classe 2</div>
+	</body>
+</html>

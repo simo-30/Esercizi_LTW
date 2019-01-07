@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Esercizio 4 - Esame 23 Lugio 2018</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<table>
+			<tr><td><img id="1" src="ab.jpg"></td><td><img id="2" src="bb.jpg"></td><td><img id="3" src="pw.jpg"></td>
+				<td><img id="4" src="lk.jpg"></td></tr>
+			<tr><td><img id="1" src="jj76.jpg"></td><td><img id="2" src="kllb.jpg"></td><td><img id="3" src="pt21ki.jpg"></td>
+				<td><img id="4" src="p1.jpg"></td></tr>
+			<tr><td><img id="1" src="d2.jpg"></td><td><img id="2" src="s0.jpg"></td><td><img id="3" src="whgg.jpg"></td>
+				<td><img id="4" src="zz.jpg"></td></tr>
+			<tr><td><img id="1" src="cb.jpg"></td><td><img id="2" src="hgyty.jpg"></td><td><img id="3" src="x4.jpg"></td>
+				<td><img id="4" src="fy98.jpg"></td></tr>
+			<tr><td><img id="imm1" src=""></td><td><img id="imm2" src=""></td><td><img id="imm3" src=""></td><td><img id="imm4" src=""></td></tr>
+		</table>
+		<script>
+			//mio script per risolvere esercizio, che utilizza jquery
+			$(document).ready(function(){
+				$("img").click(function(){
+					if ($(this).attr("id")=="1") {
+						$("#imm1").attr("src", $(this).attr("src"));
+					}
+					if ($(this).attr("id")=="2") {
+						$("#imm2").attr("src", $(this).attr("src"));
+					}
+					if ($(this).attr("id")=="3") {
+						$("#imm3").attr("src", $(this).attr("src"));
+					}
+					if ($(this).attr("id")=="4") {
+						$("#imm4").attr("src", $(this).attr("src"));
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

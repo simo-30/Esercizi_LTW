@@ -1,0 +1,32 @@
+<!DOCTYPE hmtl>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Esercizio 4 - 11 Giugno 2018</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<table>
+			<tr id="1"><td>abcd.htm</td><td>bbb.htm</td><td>pw.htm</td><td>lk.htm</td><td>ddessh.htm</td>
+				<td id="zona1">visualizza qui i documenti le cui URL sono scritte nelle caselle di questa riga</td></tr>
+			<tr id="2"><td>ccc.htm</td><td>apr.htm</td><td>wqppo.htm</td><td>lokkk.htm</td><td>kigjh.htm</td>
+				<td id="zona2">visualizza qui i documenti le cui URL sono scritte nelle caselle di questa riga</td></tr>
+			<tr id="3"><td>drwqa.htm</td><td>reppl.htm</td><td>lassskkkss.htm</td><td>pp9989ss.htm</td><td>rr4358ss8q.htm</td>
+				<td id="zona3">visualizza qui i documenti le cui URL sono scritte nelle caselle di questa riga</td></tr>
+			<tr id="4"><td>cdefe.htm</td><td>aammddss.htm</td><td>w0998ee.htm</td><td>lkes9.htm</td><td>ww23.htm</td>
+				<td id="zona4">visualizza qui i documenti le cui URL sono scritte nelle caselle di questa riga</td></tr>
+			<tr id="5"><td>ff.htm</td><td>uu332.htm</td><td>dwsax.htm</td><td>p9.htm</td><td>h3e4q.htm</td>
+				<td id="zona5">visualizza qui i documenti le cui URL sono scritte nelle caselle di questa riga</td></tr>
+		</table>
+		<script>
+			//script per risolvere l'esercizio utilizzando jquery
+			$(document).ready(function(){
+				$("td").click(function() {
+					var idTr=$(this).parent().attr("id");
+					var zona="#zona"+idTr;
+					$(zona).load(this.innerHTML);
+				});
+			});
+		</script>
+	</body>
+</html>

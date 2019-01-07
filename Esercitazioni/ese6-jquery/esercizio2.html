@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Esercizio 2 - JQuery</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<script> //mio script che utilizza jquery
+			$(document).ready(function(){
+				$("#bottone1").click(function(){
+					$("h1").empty();
+				});
+				$("#bottone2").click(function(){
+					$("#primoDiv").css("color", "red");
+				});
+				$("#bottone3").mouseenter(function(){
+					$("#secondoDiv").text("abc");
+				});
+			});
+		</script>
+		<h1>Primo titolo</h1>
+		<h1>Secondo titolo</h1>
+		<h1>Terzo titolo</h1>
+		<p>Cliccando sul primo bottone tutti gli elementi 'h1' verranno cancellati;<br> 
+		cliccando sul secondo bottone il contenuto testuale del primo elemento 'div' diventerà rosso;<br>
+		passando con il puntatore (mouse) sul terzo bottone il contenuto testuale del secondo elemento 'div' diventerà uguale a 'abc'</p>
+		<br>
+		<button id="bottone1">Bottone 1</button>
+		<button id="bottone2">Bottone 2</button>
+		<button id="bottone3">Bottone 3</button>
+		<br>
+		<div id="primoDiv">Primo elemento div</div>
+		<div id="secondoDiv">Secondo elemento div</div>
+	</body>
+</html>
