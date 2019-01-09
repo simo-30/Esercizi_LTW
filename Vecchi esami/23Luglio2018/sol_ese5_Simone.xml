@@ -35,10 +35,14 @@
 		<f>
 			<h attr="h" attrb="x"/>
 			<e>
-				<b attr="q" attrb="w">secondo elemento b</b>
+				<b attr="w" attrb="w2">altro elemento b</b>
 			</e>
 			<c/>
 		</f>
+		<e>
+			<b attr="q" attrb="w">secondo elemento b</b>
+		</e>
+		<c/>
 	</d>
 	<c/>
 </r>
