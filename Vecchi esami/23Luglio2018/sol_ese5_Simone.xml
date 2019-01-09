@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE r[
+	<!ELEMENT r (((b,a)|(f,e)),((d,c)|(h,g)))+>
+	<!ELEMENT a (h,g,g*,(e+|f+))>
+	<!ELEMENT b (#PCDATA|b|c|d|r)*>
+	<!ELEMENT c EMPTY>
+	<!ELEMENT d ((d,g)|(f,e,c)|h)>
+	<!ELEMENT e (e|b|(g,e))*>
+	<!ELEMENT f ((f,g)|(a,b)|(h,e,c))>
+	<!ELEMENT g (#PCDATA|a|b)*>
+	<!ELEMENT h EMPTY>
+	<!ATTLIST b 
+		attr CDATA #REQUIRED
+		attrb CDATA #REQUIRED>
+	<!ATTLIST h 
+		attr CDATA #REQUIRED
+		attrb CDATA #REQUIRED>
+]>
+
+
+<r> 
+	<!--l'errore nella DTD era alla riga 10, all'elemento g, dove il content model per essere corretto
+	deve essere come riscritto sopra, e non (#PCDATA|a|b)+-->
+	<b attr="qualcosa" attrb="altro">
+		<c/>
+	</b>
+	<a>
+		<h attr="uno" attrb="due"/>
+		<g>elemento g</g>
+		<e>
+			<b attr="a" attrb="b">elemento b</b>
+		</e>
+	</a>
+	<d>
+		<f>
+			<h attr="h" attrb="x"/>
+			<e>
+				<b attr="q" attrb="w">secondo elemento b</b>
+			</e>
+			<c/>
+		</f>
+	</d>
+	<c/>
+</r>
