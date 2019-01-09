@@ -1,0 +1,4 @@
+<!DOCTYPE a [
+	<!ELEMENT a ((b|c)*, b, (b|c)*)>
+	<!ELEMENT b (d*, e+)>
+]>
