@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE r[
+	<!ELEMENT r ((d,c,b,a)|(h,g,f,e))+>
+	<!ELEMENT a (#PCDATA|c|d|r)*>
+	<!ELEMENT b ((e+|f+),h,g,g*)>
+	<!ELEMENT c EMPTY>
+	<!ELEMENT d ((b,d,g)|(c,e,f)|h)>
+	<!ELEMENT e (e|b|(g,e))*>
+	<!ELEMENT f ((a,b)|(h,e,c)|(g,f*))>
+	<!ELEMENT g (#PCDATA|a|b)*>
+	<!ELEMENT h ANY>
+	<!ATTLIST c 
+		attr CDATA #REQUIRED
+		attrc CDATA #REQUIRED>
+	<!ATTLIST f 
+		attr CDATA #REQUIRED>
+]>
+
+
+<r>
+	<!--L'errore nella DTD è nel content model dell'elemento g che da (#PCDATA|a*|b)*,
+	il quale è errato, diventa (#PCDATA|a|b)*-->
+	<d>
+		<h>
+			<f attr="w">
+				<g>elemento g</g>
+			</f>
+		</h>
+	</d>
+	<c attr="1" attrc="2"/>
+	<b>
+		<e></e>
+		<h>
+			<c attr="x" attrc="s"/>
+		</h>
+		<g>altro elemento g</g>
+	</b>
+	<a>elemento a</a>
+</r>
