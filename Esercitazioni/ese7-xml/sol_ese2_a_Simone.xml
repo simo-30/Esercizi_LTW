@@ -15,7 +15,7 @@
 		facolta CDATA #REQUIRED>
 	<!ATTLIST Corso
 		numeroCrediti CDATA #REQUIRED
-		semestre (primo|secondo|annuale) #REQUIRED >
+		semestre (primo|secondo|annuale) #REQUIRED
 		sede CDATA #IMPLIED
 		tipo (obbligatorio|opzionale) #IMPLIED >
 	<!ATTLIST Studente

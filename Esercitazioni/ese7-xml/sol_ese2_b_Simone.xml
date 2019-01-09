@@ -22,3 +22,23 @@
 	<!ATTLIST Foto
 		url CDATA #REQUIRED>
 ]>
+
+<CorsoDiLaurea facolta="Ingegneria informatica ed automatica">
+	<Corso numeroCrediti="6" semestre="primo" sede="Roma" tipo="opzionale">
+		<NomeCorso>Linguaggi e tecnologie per il web</NomeCorso>
+		<DescrizioneCorso>Corso su analisi sintattica e traduzione guidata dalla sintassi,
+		HTML, XML
+		</DescrizioneCorso>
+		<Docente>
+			<Cognome>Rosati</Cognome>
+			<Nome>Riccardo</Nome>
+			<Dipartimento>DIS</Dipartimento>
+			<Foto url="foto.jpg"/>
+		</Docente>
+		<Studente matricola="01234567">
+			<Cognome>Trenta</Cognome>
+			<Nome>Simone</Nome>
+			<Commento>Fuori sede</Commento>
+		</Studente>
+	</Corso>
+</CorsoDiLaurea>
