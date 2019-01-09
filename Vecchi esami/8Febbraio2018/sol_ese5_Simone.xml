@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE a [
+	<!ELEMENT a (a|(b,d)|(e|f)+)+>
+	<!ELEMENT b ((b,g,d)|(d,e,f*)|e+)>
+	<!ELEMENT d (#PCDATA|d)*>
+	<!ELEMENT e EMPTY>
+	<!ELEMENT f (#PCDATA|a|b|d|e)*>
+	<!ELEMENT g (((e,f)|g)*,b)>
+	<!ATTLIST a 
+		attr CDATA #REQUIRED
+		attra CDATA #IMPLIED>
+	<!ATTLIST b 
+		attr CDATA #REQUIRED>
+	<!ATTLIST e 
+		attre CDATA #REQUIRED>
+]>
+
+<a attr="a" attra="d">
+	<!--L'errore nella DTD era nel content model dell'elemento f,
+	che corretto è come scritto su, volendo mantenere l'opzionalità di entrambi gli elementi b,d;
+	un altro errore è nel content model dell'elemento d, in quanto è errato mettere un elemento,
+	z in questo caso, non dichiarato;
+	un altro errore presente in questo DTD è la presenza dell'elemento c nei content model,
+	ma l'elemento c non è stato dichiarato, per cui la correzione da fare è eliminarlo dai content model-->
+	<b attr="e">
+		<b attr="w">
+			<e attre="w"/>
+		</b>
+		<g>
+			<e attre="e"/>
+			<f>elemento f</f>
+		</g>
+		<d>elemento d</d>
+	</b>
+	<d>elemento d</d>
+</a>
