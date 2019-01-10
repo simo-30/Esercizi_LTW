@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE r[
+	<!ELEMENT r ((t,x)|(s,y))+>
+	<!ELEMENT s (y,u)+>
+	<!ELEMENT t (x,v)>
+	<!ELEMENT u ((t|s|v)?,((r|x|y)+,y)*)>
+	<!ELEMENT v ((u|x)+,(x|y)+,(y|u)+)>
+	<!ELEMENT x (#PCDATA|t|x)*>
+	<!ELEMENT y EMPTY>
+	<!ATTLIST u 
+		attru CDATA #IMPLIED>
+	<!ATTLIST v 
+		attrv CDATA #REQUIRED
+		attrvv CDATA #IMPLIED>
+]>
+
+<!--la DTD corretta è con il content model dell'elemento y senza parentesi-->
+<r>
+	<t>
+		<x>elemento x</x>
+		<v attrv="w" attrvv="q">
+			<u attru="w">
+				<s>
+					<y/>
+					<u attru="3w">
+						<y/>
+						<y/>
+					</u>
+				</s>
+			</u>
+			<y/>
+			<y/>
+		</v>
+	</t>
+	<x>elemento x</x>
+</r>

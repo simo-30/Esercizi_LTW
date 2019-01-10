@@ -4,16 +4,47 @@
 		<title>Esercizio 4 - JQuery</title>
 	</head>
 	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 		inizio documento
-	<hr/>
-	<div>
-		prima zona di visualizzazione dei documenti
-	</div>
-	<hr/>
-	<div>
-		seconda zona di visualizzazione dei documenti
-	</div>
-	<hr/>
+		<hr/>
+		<div>
+			<button>doc1</button>
+			<button>doc2</button>
+			<button>doc3</button>
+			<button>doc4</button>
+			<button>doc5</button>
+			<button>doc6</button>
+			<button>doc7</button>
+			<button>doc8</button>
+		</div>
+		<hr/>
+		<div id="zona1">
+			prima zona di visualizzazione dei documenti
+		</div>
+		<hr/>
+		<div id="zona2">
+			seconda zona di visualizzazione dei documenti
+		</div>
+		<hr/>
 		fine documento
+		<script>
+			//funzioni jquery per risolvere l'esercizio
+			$(document).ready(function(){
+				$("button").click(function(){
+					var c=this.innerHTML.charAt(3);
+					if (c<="4") {
+						c="1";
+					}
+					else {
+						c="2";
+					}
+					$("#zona"+c).load(this.innerHTML+".htm", function(responseTxt, statusTxt, xhr){
+						if (statusTxt=="error") {
+							alert("Errore"+xhr.status+":"+xhr.statusText);
+						}
+					});
+				});
+			});
+		</script>
 	</body>
 </html>
