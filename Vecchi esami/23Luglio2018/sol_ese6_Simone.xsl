@@ -40,11 +40,13 @@
 	</xsl:template>
 	
 	<xsl:template match="com">
-		<xsl:text></xsl:text>
 	</xsl:template>
 	
 	<xsl:template match="*">
 		<xsl:apply-templates/>
+	</xsl:template>
+	
+	<xsl:template match="text()">
 	</xsl:template>
 	
 	<!--NON SO È GIUSTO-->
