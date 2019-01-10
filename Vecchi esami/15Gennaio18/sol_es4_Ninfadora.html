@@ -1,0 +1,39 @@
+<!--Da Controllare-->
+<html>
+    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+        </script>
+
+
+        <ul>
+        <li id = "1">prova.htm</li>
+        <li id = "2">http://www.uniroma1.it/index2.htm</li>
+        <li>http://www.uniroma1.it/index3.htm</li>
+        <li>http://www.uniroma1.it/index4.htm</li>
+        <li>http://www.uniroma1.it/index5.htm</li>
+        <li>http://www.uniroma1.it/index6.htm</li>
+        <li>http://www.uniroma1.it/index7.htm</li>
+        <li>http://www.uniroma1.it/page1.htm</li>
+        <li>http://www.uniroma1.it/page2.htm</li>
+        <li>http://www.uniroma1.it/page3.htm</li>
+        <li>http://www.uniroma1.it/page4.htm</li>
+        <li>http://www.uniroma1.it/page5.htm</li>
+        <li>http://www.uniroma1.it/page6.htm</li>
+        <li>http://www.uniroma1.it/page7.htm</li>
+        </ul>
+        <div id="z"></div>
+
+        <script>
+            $(document).ready(function(){
+                $("li").click(function(){
+                    var i = $(this).attr("id");
+                    $.get(this.innerHTML, function(data){ 
+                        $("#"+i).append(data);
+                    });
+                });
+            });
+        </script>
+
+    </body>
+
+</html>
