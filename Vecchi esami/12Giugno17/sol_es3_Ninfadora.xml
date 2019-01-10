@@ -1,0 +1,72 @@
+<!DOCTYPE a [
+	<!ELEMENT a (((c,b)|(d,(e,f)*)),(b,b))>
+	<!ELEMENT b ((a|(c,(d,e)*,f)))>
+	<!ELEMENT c (d,e,a*,f?,b?,c*)>
+	<!ELEMENT d (#PCDATA|d|e)*>
+	<!ELEMENT e EMPTY>
+	<!ELEMENT f (#PCDATA)>
+	<!ATTLIST b attr CDATA #REQUIRED
+				attrb CDATA #REQUIRED>
+	<!ATTLIST e attr CDATA #REQUIRED>
+]>
+
+<a>
+	<c>
+		<d>ciao</d>
+		<e attr="R"/>
+		<f>pc</f>
+		<b attr="d" attrb="c">
+			<a>
+				<d>unaltra</d>
+				<b attr="d" attrb="c">
+					<c>
+						<d>ancora</d>
+						<e attr="r"/>
+					</c>
+					<f>ciao</f>
+				</b>
+				<b attr="d" attrb="c">
+					<c>
+						<d>ancora2</d>
+						<e attr="r"/>
+					</c>
+					<f>ciao2</f>
+				</b>
+			</a>
+		</b>
+	</c>
+	<b attr="d" attrb="c">
+		<a>
+			<d>unaltra</d>
+			<b attr="d" attrb="c">
+			<c>
+				<d>ancora</d>
+				<e attr="r"/>
+			</c>
+			<f>ciao</f>
+			</b>
+			<b attr="d" attrb="c">
+			<c>
+				<d>ancora</d>
+				<e attr="r"/>
+			</c>
+			<f>ciao</f>
+			</b>
+		</a>
+			
+	</b>
+	<b attr="d" attrb="c">
+		<c>
+			<d>gnfaccio</d>
+			<e attr="r"/>
+		</c>
+		<f>ciao</f>
+	</b>
+	<b attr="d" attrb="c">
+		<c>
+			<d>gnfaccio2</d>
+			<e attr="r"/>
+		</c>
+		<f>addio</f>
+	</b>
+</a>
