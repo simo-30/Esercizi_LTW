@@ -29,6 +29,9 @@
 		<g>
 			<e attre="e"/>
 			<f>elemento f</f>
+			<b attr="w">
+				<e attre="e"/>
+			</b>
 		</g>
 		<d>elemento d</d>
 	</b>
