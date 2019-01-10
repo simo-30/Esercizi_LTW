@@ -1,0 +1,38 @@
+<!DOCTYPE a [
+	<!ELEMENT a (a|(b,d)|(e|f)+)+>
+	<!ELEMENT b ((b,g,d)|(d,e,f*)|e+)>
+	<!ELEMENT d (#PCDATA|d)*>
+	<!ELEMENT e EMPTY>
+	<!ELEMENT f (#PCDATA|a|b|d|e)*>
+	<!ELEMENT g (((e,f)|g)*,b)>
+	<!ATTLIST a attr CDATA #REQUIRED
+				attra CDATA #IMPLIED>
+	<!ATTLIST b attr CDATA #REQUIRED>
+	<!ATTLIST e attre CDATA #REQUIRED>
+]>
+
+
+<a attr="radice">
+	<e attre="cdata"/>
+	<f>
+		<b attr="de">
+			<d>ciao</d>
+			<e attre="2"/>
+			<f>
+				<b attr="">
+					<b attr="2">
+						<e attre="3"/>
+					</b>
+					<g>
+						<b attr="altro">
+							<e attre="3"/>
+						</b>
+					</g>
+					<d> ciao </d>
+				</b>
+			
+			</f>
+			
+		</b>
+	</f>
+</a>

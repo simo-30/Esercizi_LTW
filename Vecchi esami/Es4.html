@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js">
+        </script>
+        <div>
+            <a href="ciao.htm">link</a>
+            <a href="http://www.abc/index3.htm">link</a> <a href="http://www.xyz/index4.htm">link</a>
+            <a href="http://www.abc/index5.htm">link</a> <a href="http://www.xyz/index6.htm">link</a>
+            <a href="http://www.abc/index7.htm">link</a> <a href="http://www.xyz/index8.htm">link</a>
+        </div>
+        <div>
+            <a href="http://www.xyz/page1.htm">link</a> <a href="http://www.abc/page2.htm">link</a>
+            <a href="http://www.xyz/page3.htm">link</a> <a href="http://www.abc/page4.htm">link</a>
+            <a href="http://www.xyz/page5.htm">link</a> <a href="http://www.abc/page6.htm">link</a>
+            <a href="http://www.xyz/page7.htm">link</a> <a href="http://www.abc/page8.htm">link</a>
+        </div>
+        <div id="c"></div>
+        <script>
+                /*
+                    script per risolvere l'esercizio con JQuery
+                */
+                $(document).ready(function(){
+                    $("a").click(function(){
+                        alert("a");
+                        event.preventDefault();
+                        var k = this.innerHTML;
+                        var x = $(this).attr("href");
+                        $(this).load(x, function(){
+                            this.innerHTML = k+this.innerHTML;
+                        });
+                    });
+                });
+                //non risolto
+        </script>
+
+    </body>
+
+</html>

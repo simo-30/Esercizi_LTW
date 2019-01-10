@@ -1,0 +1,12 @@
+<r>
+testo 1
+<c>testo 2<a>testo 2bis</a></c>
+<d>testo 3<b>testo 3bis</b></d>
+<e>testo 4</e>
+<f><e>testo 5</e></f>
+<c>testo 6</c>
+<a>
+testo 7
+<e>testo 8</e>
+</a>
+</r>
