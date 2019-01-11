@@ -1,0 +1,27 @@
+<!DOCTYPE r [
+	<!ELEMENT r ((a|b),(c|d),(e,f)*)>
+	<!ELEMENT a (((e*)|(f*)),d,d+,b)>
+	<!ELEMENT b (((b,d,g)|(c,e,f)),g)>
+	<!ELEMENT c ANY>
+	<!ELEMENT d (#PCDATA|d|r)*>
+	<!ELEMENT e (#PCDATA)>
+	<!ELEMENT f EMPTY>
+	<!ELEMENT g (#PCDATA|a|b)*>
+	<!ATTLIST b attr CDATA #REQUIRED
+				attrb CDATA #REQUIRED>
+]>
+
+<r>
+	<a>
+		<e>ciao</e>
+		<d>ancora</d>
+		<d>nuovo</d>
+		<b attr="oks" attrb="ssd">
+			<c>qualsiasi</c>
+			<e>unaltro</e>
+			<f/>
+			<g>oppure</g>
+		</b>
+	</a>
+	<c>ok</c>
+</r>
