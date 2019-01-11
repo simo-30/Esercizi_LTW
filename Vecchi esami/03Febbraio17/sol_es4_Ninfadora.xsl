@@ -2,7 +2,6 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:foo="http://www.foo.org/" xmlns:bar="http://www.bar.org">
 	<xsl:output method="xml"/>
 	
-<!--Provandolo sul trasformatore online non viene, ma non so dove dover cambiare-->
 	<!--1-->
 	<xsl:template match="/*">
 		<xsl:element name="root">
@@ -36,8 +35,8 @@
 	<!--6-->
 	<xsl:template match="/*/*/*">
 		<xsl:element name="{name()}">
-			<xsl:apply-templates/>
 		</xsl:element>
+		<xsl:apply-templates/> <!--Non sono sicura di dove vada-->
 	</xsl:template>
 	
 	<!--7-->
