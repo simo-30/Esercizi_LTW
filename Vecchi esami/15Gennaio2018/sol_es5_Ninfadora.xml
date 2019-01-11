@@ -12,6 +12,8 @@
 ]>
 
 <z>
+	<!--SIMONE: controlla il content model di c, viene messo l'elemento g, il quale però non 
+				è dichiarato nel DTD-->
 	<a attr="d" attra="c">
 		<b attr="a">ciao</b>
 		<c>

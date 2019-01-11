@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE z[
+	<!ELEMENT z (a|(c,d)|e)*>
+	<!ELEMENT a ((b,c,d)|(d,e,a*)|f+)>
+	<!ELEMENT b ANY>
+	<!ELEMENT c ((c*,(e,f)*),b)>
+	<!ELEMENT d (#PCDATA|d|z)*>
+	<!ELEMENT e EMPTY>
+	<!ELEMENT f (#PCDATA|a|c|d|e)*>
+	<!ATTLIST a 
+		attr CDATA #REQUIRED
+		attra CDATA #IMPLIED>
+	<!ATTLIST b 
+		attr CDATA #REQUIRED>
+]>
+
+<z>
+	<!--la DTD data presenta 2 errori:
+		1) nel content model dell'elemento c è presente un elemento (g) non dichiarato, l'ho corretto eliminando tale elemento non dichiarato
+		2) il content model dell'elemento f è errato, e va corretto scrivendolo così (#PCDATA|a|c|d|e)*-->
+	<a attr="w" attra="w">
+		<b attr="s">
+			<e/>
+			<f>elemento f</f>
+		</b>
+		<c>
+			<b attr="p">elemento b, ANY</b>
+		</c>
+		<d>elemento d</d>
+	</a>
+</z>
