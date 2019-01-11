@@ -1,0 +1,50 @@
+<html>
+    <body>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js">
+        </script>
+
+        inizio documento...
+        <p id="zona1">prima zona</p><p id="zona2">seconda zona</p><p id="zona3">terza zona</p><div id="neutra">quarta zona</div>
+        ...fine documento
+
+        <p>
+        <button>newDoc1.htm</button>
+        <button>newDoc2.htm</button>
+        <button>newDoc3.htm</button>
+        <button>newDoc4.htm</button>
+        <button>newDoc5.htm</button>
+        <button>newDoc6.htm</button>
+        <button>newDoc7.htm</button>
+        <button>newDoc8.htm</button>
+        <button>newDoc9.htm</button>
+
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    var n = this.innerHTML.charAt(6);
+                    if(n <= "3"){
+                        n = "1";
+                        $("#zona"+n).load(this.innerHTML,function(responseTxt,statusTxt,xhr){
+                            if(statusTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                        });
+                    }
+                    else if(n > "3" && n<="6"){
+                        n="2";
+                        $("#zona"+n).load(this.innerHTML,function(responseTxt,statusTxt,xhr){
+                            if(statusTxt == "error") alert("Errore"+xh.status+":"+xhr.statusText);
+                        });
+                    }
+                    else{
+                        n="3";
+                        $("#zona"+n).load(this.innerHTML,function(responseTxt,statusTxt,xhr){
+                            if(statusTxt == "error") alert("Errore"+xh.status+":"+xhr.statusText);
+                        });
+                    }
+                    $("#neutra").load(this.innerHTML,function(responseTxt,statusTxt,xhr){
+                            if(statusTxt == "error") alert("Errore"+xh.status+":"+xhr.statusText);
+                        });
+                });
+            });
+        </script>
+    </body>
+</html>
