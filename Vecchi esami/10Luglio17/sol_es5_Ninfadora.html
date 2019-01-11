@@ -1,0 +1,54 @@
+<html>
+    <body>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js">
+        </script>
+
+            <ul>
+            <li>http://www.example.com/index.htm</li>
+            <li>http://www.example.com/index2.htm</li>
+            <li>http://www.uniroma1.it/esempio/e1.htm</li>
+            <li>http://www.uniroma1.it/esempio/e2.htm</li>
+            <li>http://www.xyz.abc/a.htm</li>
+            <li>http://www.xyz.abc/ab.htm</li>
+            <li>http://www.uniroma1.it/esempio/e3.htm</li>
+            <li>http://www.uniroma1.it/esempio/e4.htm</li>
+            <li>http://www.example.com/index3.htm</li>
+            <li>http://www.example.com/index4.htm</li>
+            <li>http://www.uniroma1.it/altro/a.htm</li>
+            <li>http://www.uniroma1.it/altro/b.htm</li>
+            <li>http://www.xyz.abc/abc.htm</li>
+            <li>http://www.xyz.abc/abcd.htm</li>
+            <li>http://www.uniroma1.it/altro/c.htm</li>
+            <li>http://www.uniroma1.it/altro/d.htm</li>
+            </ul>
+            <div id="uni">visualizza qui i documenti che provengono da uniroma1.it</div><hr/>
+            <div id="exe">visualizza qui i documenti che provengono da example.com</div><hr/>
+            <div id="xyz">visualizza qui i documenti che provengono da xyz.abc</div><br/><hr/>
+
+            <script>
+                $(document).ready(function(){
+                    $("li").click(function(){
+                        var i = this.innerHTML.char(11);//L'ho fatto per non mettere tutti gli id/classi. A me non funziona in nessuno dei due modi. Ma non credo sia errato
+                        if(i == "e"){
+                            $("#exe").load(function(responseTxt, statusTxt, xhr){
+                                if(statusTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                            });
+                        }
+                        else if(i == "u"){
+                            $("#uni").load(function(responseTxt, statusTxt, xhr){
+                                if(responseTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                            });
+                        }
+                        else {
+                            $("#xyz").load(function(responseTxt, statusTxt, xhr){
+                                if(responseTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                            });
+                        }
+                    });
+                });
+            </script>
+
+
+
+    </body>
+</html>

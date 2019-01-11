@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <script src="http://code.jquery.com/jquery-3.3.1.min.js">
+        </script>
+
+        inizio documento...
+        <p class="l">link1.htm</p><p class="l">link2.htm</p><p class="l">link3.htm</p>
+        <p class="d">doc1.htm</p><p class="d">doc2.htm</p><p class="d">doc3.htm</p>
+        <p class="u">url1.htm</p><p class="u">url2.htm</p><p class="u">url3.htm</p>
+
+        <span id="zona1">visualizza qui link1, link2 e link3</span><br/>
+        <span id="zona2">visualizza qui doc1, doc2 e doc3</span><br/>
+        <span id="zona3">visualizza qui url1, url2 e url3</span><br/>
+        ...fine documento
+
+        <script>
+            $(document).ready(function(){
+                $("p").click(function(){
+                    var t = $(this).attr("class");
+                    if(t == "l"){
+                        $("#zona1").load(this.innerHTML,function(responseTxt, statusTxt, xhr){
+                            if(statusTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                        });
+                    }
+                    else if(t == "d"){
+                        $("#zona2").load(this.innerHTML,function(responseTxt, statusTxt, xhr){
+                            if(statusTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                        });
+                    }
+                    else{
+                        $("#zona3").load(this.innerHTML,function(responseTxt, statusTxt, xhr){
+                            if(statusTxt == "error") alert("Errore"+xhr.status+":"+xhr.statusText);
+                        });
+                    }
+                })
+            })
+        
+        </script>
+    </body>
+</html>

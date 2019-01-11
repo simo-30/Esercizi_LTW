@@ -1,0 +1,31 @@
+<!DOCTYPE r [
+	<!ELEMENT r (((b,d)|(c,(d,e)*,f)),f)>
+	<!ELEMENT b ANY>
+	<!ELEMENT c (((b,c)|(d,(e,f)*)),(g,g))>
+	<!ELEMENT d (d?,e*,f+,(b,c)*,g)>
+	<!ELEMENT e (#PCDATA|d|e)*>
+	<!ELEMENT f EMPTY>
+	<!ELEMENT g (#PCDATA)>
+	<!ATTLIST c attr CDATA #REQUIRED
+				attrc CDATA #REQUIRED>
+	<!ATTLIST f attrf CDATA #REQUIRED>
+]>
+
+<r>
+	<b> any </b>
+	<d>
+		<e>ciao</e>
+		<f attrf="atr"/>
+		<b>any2</b>
+		<c attr="Req" attrc="CC">
+			<d>
+				<f attrf="basta"/>
+				<g>pcdata</g>
+			</d>
+			<g>oooo</g>
+			<g>aaaaa</g>
+		</c>
+		<g>ei</g>
+	</d>
+	<f attrf="atf"/>
+</r>

@@ -1,0 +1,40 @@
+<!DOCTYPE r [
+	<!ELEMENT r ((c|(d,e)*),f?,a,b,g)>
+	<!ELEMENT a (r*,c,c+,((e*)|(f*)))>
+	<!ELEMENT b ((b|f),(c|e))>
+	<!ELEMENT c (#PCDATA)> 
+	<!ELEMENT d ANY>
+	<!ELEMENT e (#PCDATA|c|d)*>
+	<!ELEMENT f (#PCDATA|d|e|f|g)*>
+	<!ELEMENT g EMPTY>
+	<!ATTLIST a attr CDATA #IMPLIED
+				attra CDATA #REQUIRED>
+	<!ATTLIST g attr CDATA #REQUIRED>
+]>
+
+<r>
+	<c>ciao</c>
+	<f> 
+		<e>
+			<d>
+				qualsiasi
+			</d>
+		</e>
+	</f>
+	<a attra="ei">
+		<c> vuoti </c>
+		<c> piu </c>
+		<f>wow</f>
+	</a>
+	<b>
+		<f>
+			pcdata
+		</f>
+		<c>
+			daje
+		</c>
+	</b>
+	<g attr="r"/>
+</r>
+
+
