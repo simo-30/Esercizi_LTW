@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Esercizio 4 - JQuery</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<ul>
+			<li>prova.htm</li>
+			<li>http://www.uniroma1.it/index1.htm</li>
+			<li>http://www.uniroma1.it/index2.htm</li>
+			<li>http://www.uniroma1.it/index3.htm</li>
+			<li>http://www.uniroma1.it/index4.htm</li>
+			<li>http://www.uniroma1.it/index5.htm</li>
+			<li>http://www.uniroma1.it/index6.htm</li>
+			<li>http://www.uniroma1.it/index7.htm</li>
+			<li>http://www.uniroma1.it/page1.htm</li>
+			<li>http://www.uniroma1.it/page2.htm</li>
+			<li>http://www.uniroma1.it/page3.htm</li>
+			<li>http://www.uniroma1.it/page4.htm</li>
+			<li>http://www.uniroma1.it/page5.htm</li>
+			<li>http://www.uniroma1.it/page6.htm</li>
+			<li>http://www.uniroma1.it/page7.htm</li>
+		</ul>
+		<script>
+			//script che utilizza jquery per risolvere l'esercizio
+			$(document).ready(function(){
+				$("li").click(function(){
+					$(this).append(function(){
+						$(this).load(this.innerHTML, function(responseTxt, statusTxt, xhr){
+							if(statusTxt=="error") alert("Errore"+xhr.status+":"+xhr.statusText);
+						});
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
