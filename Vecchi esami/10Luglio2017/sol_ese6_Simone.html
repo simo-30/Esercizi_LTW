@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Esercizio 6 - JQuery</title>
+	</head>
+	<body>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		<ul>
+			<li>http://www.example.com/index.htm</li>
+			<li>http://www.example.com/index2.htm</li>
+			<li>http://www.uniroma1.it/esempio/e1.htm</li>
+			<li>http://www.uniroma1.it/esempio/e2.htm</li>
+			<li>http://www.xyz.abc/a.htm</li>
+			<li>http://www.xyz.abc/ab.htm</li>
+			<li>http://www.uniroma1.it/esempio/e3.htm</li>
+			<li>http://www.uniroma1.it/esempio/e4.htm</li>
+			<li>http://www.example.com/index3.htm</li>
+			<li>http://www.example.com/index4.htm</li>
+			<li>http://www.uniroma1.it/altro/a.htm</li>
+			<li>http://www.uniroma1.it/altro/b.htm</li>
+			<li>http://www.xyz.abc/abc.htm</li>
+			<li>http://www.xyz.abc/abcd.htm</li>
+			<li>http://www.uniroma1.it/altro/c.htm</li>
+			<li>http://www.uniroma1.it/altro/d.htm</li>
+		</ul>
+		<div id="u">visualizza qui i documenti che provengono da uniroma1.it</div><hr/>
+		<div id="e">visualizza qui i documenti che provengono da example.com</div><hr/>
+		<div id="x">visualizza qui i documenti che provengono da xyz.abc</div><br/><hr/>
+		<script>
+			//script che utilizza jquery per risolvere l'esercizio
+			$(document).ready(function(){
+				$("li").click(function(){
+					var c=this.innerHTML.charAt(11);
+					$("#"+c).load(this.innerHTML, function(responseTxt, statusTxt, xhr) {
+						if (statusTxt=="error") alert("Errore"+xhr.status+":"+xhr.statusText);
+					});
+				});
+			});
+		</script>
+	</body>
+</html>
