@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE r[
+	<!ELEMENT r (((b,d)|(c,(d,e)*,f)),f)>
+	<!ELEMENT b ANY>
+	<!ELEMENT c (((b,c)|(d,(e,f)*)),(g,g))>
+	<!ELEMENT d (d?,e*,f+,(b,c)*,g)>
+	<!ELEMENT e (#PCDATA|d|e)*>
+	<!ELEMENT f EMPTY>
+	<!ELEMENT g (#PCDATA)>
+	<!ATTLIST c 
+		attr CDATA #REQUIRED
+		attrc CDATA #REQUIRED>
+	<!ATTLIST f 
+		attrf CDATA #REQUIRED>
+]>
+
+<r>
+	<!--
+		Errori nella DTD:
+		1) content model dell'elemento r => gli elementi in or vanno messi fra parentesi;
+		2) content model dell'elemento d => va eliminata una parentesi finale, e va eliminata
+		   anche l'elemento a, non dichiarato nel DTD, per cui non può essere presente
+		   nessun content model;
+		3) content model dell'elemento e => unico modo per dichiarare un #PCDATA insieme ad
+		   altri elementi è (#PCDATA|d|e)*
+   -->
+   <b>elemento b</b>
+   <d>
+	   <e>elemento e</e>
+	   <f attrf="e"></f>
+	   <b>altro elemento b</b>
+	   <c attr="e" attrc="p">
+		   <d>
+			   <f attrf="l"></f>
+			   <g>altro elemento g</g>
+		   </d>
+		   <g>ennesimo elemento g</g>
+		   <g>penultimo elemento g</g>
+	   </c>
+	   <g>ultimissimo elemento g</g>
+   </d>
+   <f attrf="kk"></f>
+</r>
