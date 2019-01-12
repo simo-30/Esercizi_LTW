@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <z>
-testo 1
-<a><b>testo 2</b></a>
-<c>
-<d><w>testo 3</w></d>
-</c>
-<w>
-<t><b>testo 4</b></t>
-</w>
+	testo 1
+	<a>
+		<b>testo 2</b>
+	</a>
+	<c>
+		<d>
+			<w>testo 3</w>
+		</d>
+	</c>
+	<w>
+		<t>
+			<b>testo 4</b>
+		</t>
+	</w>
 </z>
